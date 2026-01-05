@@ -1,61 +1,116 @@
-let total = 0;
-const cartItems = document.getElementById("cartItems");
-const totalEl = document.getElementById("total");
+var total = 0;
+var cartItemsList = document.getElementById("cartItems");
+var totalDisplay = document.getElementById("total");
+var form = document.getElementById("bookingForm");
+var myCart = new Map();
 
-// Track selected items
-const selectedItems = new Map();
+window.onload = function() {
+    var buttons = document.getElementsByClassName("service-btn");
+    
+    for(var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function() {
+            var serviceName = this.getAttribute('data-name');
+            var servicePrice = parseInt(this.getAttribute('data-price'));
+            
+            if(myCart.has(serviceName)) {
+                removeFromCart(serviceName, servicePrice, this);
+            } else {
+                addToCart(serviceName, servicePrice, this);
+            }
+        };
+    }
+    
+    form.onsubmit = doBooking;
+};
 
-document.querySelectorAll(".service-btn").forEach(button => {
-    button.addEventListener("click", () => {
-        const name = button.dataset.name;
-        const price = Number(button.dataset.price);
-
-        if (selectedItems.has(name)) {
-            removeItem(name, price, button);
-        } else {
-            addItem(name, price, button);
-        }
-    });
-});
-
-function addItem(name, price, button) {
-    // Add to cart UI
-    const li = document.createElement("li");
-    li.setAttribute("data-name", name);
-    li.innerHTML = `
-        <span>${name}</span>
-        <span>₹${price}</span>
-    `;
-
-    cartItems.appendChild(li);
-
-    // Update total
-    total += price;
-    totalEl.textContent = total;
-
-    // Track item
-    selectedItems.set(name, { price, li });
-
-    // Change button state
-    button.innerHTML = `<i class="fa-solid fa-minus"></i> Remove Item`;
-    button.classList.add("remove");
+function addToCart(name, price, btn) {
+    var listItem = document.createElement("li");
+    listItem.setAttribute("data-name", name);
+    listItem.innerHTML = "<span>" + name + "</span> <span>₹" + price + "</span>";
+    
+    cartItemsList.appendChild(listItem);
+    total = total + price;
+    totalDisplay.innerHTML = total;
+    myCart.set(name, {price: price, element: listItem});
+    
+    btn.innerHTML = "- Remove Item";
+    btn.className = "service-btn remove";
 }
 
-function removeItem(name, price, button) {
-    const item = selectedItems.get(name);
-    if (!item) return;
+function removeFromCart(name, price, btn) {
+    var cartItem = myCart.get(name);
+    if(cartItem == null) return;
+    
+    cartItem.element.parentNode.removeChild(cartItem.element);
+    total = total - price;
+    totalDisplay.innerHTML = total;
+    myCart.delete(name);
+    
+    btn.innerHTML = "+ Add Item";
+    btn.className = "service-btn";
+}
 
-    // Remove from UI
-    item.li.remove();
-
-    // Update total
-    total -= price;
-    totalEl.textContent = total;
-
-    // Remove from map
-    selectedItems.delete(name);
-
-    // Reset button
-    button.innerHTML = `<i class="fa-solid fa-plus"></i> Add Item`;
-    button.classList.remove("remove");
+function doBooking(event) {
+    event.preventDefault();
+    
+    var customerName = form.name.value;
+    var customerEmail = form.email.value;
+    var customerPhone = form.phone.value;
+    
+    var messageBox = document.getElementById("statusMsg");
+    if(messageBox == null) {
+        messageBox = document.createElement("div");
+        messageBox.id = "statusMsg";
+        messageBox.className = "status-message";
+        form.appendChild(messageBox);
+    }
+    
+    if(customerName == "" || customerEmail == "" || customerPhone == "") {
+        messageBox.innerHTML = "Please fill all the fields first!";
+        messageBox.className = "status-message error";
+        return;
+    }
+    
+    if(total == 0) {
+        messageBox.innerHTML = "Please add at least one service to your cart!";
+        messageBox.className = "status-message error";
+        return;
+    }
+    
+    var orderList = "";
+    myCart.forEach(function(item, serviceName) {
+        orderList = orderList + serviceName + " - ₹" + item.price + "\n";
+    });
+    
+    var emailTitle = "Your Laundry Booking - Total ₹" + total;
+    var emailText = "Hello " + customerName + ",\n\n" +
+                   "Here are your booking details:\n" +
+                   orderList +
+                   "Total Amount: ₹" + total + "\n" +
+                   "Phone: " + customerPhone + "\n\n" +
+                   "Thank you for choosing us! We'll call you soon.";
+    
+    window.location = "mailto:" + customerEmail + 
+                     "?subject=" + encodeURIComponent(emailTitle) +
+                     "&body=" + encodeURIComponent(emailText);
+    
+    messageBox.innerHTML = "Booking sent to " + customerEmail + "! Check your email.";
+    messageBox.className = "status-message success";
+    
+    form.reset();
+    cartItemsList.innerHTML = "";
+    total = 0;
+    totalDisplay.innerHTML = "0";
+    myCart.clear();
+    
+    var allServiceButtons = document.getElementsByClassName("service-btn");
+    for(var j = 0; j < allServiceButtons.length; j++) {
+        allServiceButtons[j].innerHTML = "+ Add Item";
+        allServiceButtons[j].className = "service-btn";
+    }
+    
+    setTimeout(function() {
+        messageBox.innerHTML = "";
+        messageBox.className = "status-message";
+    }, 5000);
 }
