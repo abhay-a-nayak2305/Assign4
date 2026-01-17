@@ -4,162 +4,231 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laundry Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
 </head>
 
-<body>
-    <header class="navbar">
-        <div class="logo">Logo</div>
-        <nav class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <span class="user">Username</span>
+<body class="bg-gray-50">
+    <!-- Your existing header content -->
+    <header class="text-gray-600 body-font bg-white shadow-sm">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <span class="ml-3 text-xl">Logo</span>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                <a class="cursor-pointer mr-5 hover:text-gray-900 hover:border-b hover:border-blue-500 border-white transition duration-200 ease-in" href="#home">Home</a>
+                <a class="cursor-pointer mr-5 hover:text-gray-900 hover:border-b hover:border-blue-500 border-white transition duration-200 ease-in" href="#services">Services</a>
+                <a class="cursor-pointer mr-5 hover:text-gray-900 hover:border-b hover:border-blue-500 border-white transition duration-200 ease-in" href="#about">About Us</a>
+                <a class="cursor-pointer mr-5 hover:text-gray-900 hover:border-b hover:border-blue-500 border-white transition duration-200 ease-in" href="#contact">Contact Us</a>
+            </nav>
+            <button class="inline-flex items-center bg-blue-500 text-white border-0 py-2 px-4 focus:outline-none rounded-xl text-base mt-4 md:mt-0 hover:bg-blue-600 transition duration-200">Username</button>
+        </div>
     </header>
 
-    <section class="hero" id="hero">
-        <div class="hero-text">
-            <h1>Revitalize Your Clothes with Expert <span>Laundry Services!</span></h1>
-            <p>Premium dry cleaning to swift wash and fold. Doorstep pickup and delivery.</p>
-            <a class="primary-btn" href="#services" style="width: 40%;">Book Service</a>
-        </div>
-        <div class="hero-img">
-            <img src="https://media.istockphoto.com/id/1141658592/vector/washing-machine-with-a-wash-basin-and-cleaning-stuff.jpg?s=612x612&w=0&k=20&c=3oiiJxXaN-KE2J5CacUZwlqfs5tfj6QPD41VGgXaPu8=" alt="Laundry Service">
+    <!-- Hero Section -->
+    <section class="text-gray-600 body-font" id="home">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Revitalize your clothes with
+                    <br class="hidden lg:inline-block">
+                    <span class="text-blue-500">Expert Laundry Services.</span>
+                </h1>
+                <p class="mb-8 leading-relaxed text-lg">From premium cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!</p>
+                <div class="flex justify-center">
+                    <a class="inline-flex text-white bg-blue-500 border-0 py-4 px-10 focus:outline-none hover:bg-blue-600 rounded-2xl text-lg font-medium transition duration-200" href="#services">Book a service today!</a>
+                </div>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded-lg shadow-2xl" alt="hero" src="https://media.istockphoto.com/id/1039504420/vector/vector-washing-machine-color-design.jpg?s=612x612&w=0&k=20&c=NHNtj9fI9MYTms09Xn5A3YgnV1rUxQMVz24N1rEY3W8=">
+            </div>
         </div>
     </section>
 
-    <section class="achievements">
-        <h2>Our Achievements</h2>
-        <div class="stats">
-            <div><strong>15+</strong><span>Services</span></div>
-            <div><strong>240+</strong><span>Customers</span></div>
-            <div><strong>2+ Yrs</strong><span>Experience</span></div>
+    <!-- Achievements Section -->
+    <section class="text-gray-600 body-font bg-gradient-to-r from-blue-500 to-blue-600">
+        <div class="container px-5 py-12 mx-auto">
+            <div class="flex flex-wrap -m-4 text-center">
+                <div class="p-6 sm:w-1/3 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">Our Achievements</h2>
+                </div>
+                <div class="p-4 sm:w-1/5 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">15+</h2>
+                    <p class="leading-relaxed text-blue-100">Laundry Services</p>
+                </div>
+                <div class="p-4 sm:w-1/5 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">240+</h2>
+                    <p class="leading-relaxed text-blue-100">Happy Customers</p>
+                </div>
+                <div class="p-4 sm:w-1/5 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">2+ Yrs</h2>
+                    <p class="leading-relaxed text-blue-100">Experience</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="services-cart" id="services">
-        <div class="services">
-            <h3>Our Services</h3>
-            <div class="service">
-                <span>Dry Cleaning - ₹200</span>
-                <button class="service-btn" data-name="Dry Cleaning" data-price="200">
-                 + Add Item
-                </button>
-            </div>
-            <div class="service">
-                <span>Wash & Fold - ₹100</span>
-                <button class="service-btn" data-name="Wash & Fold" data-price="100">
-                 + Add Item
-                </button>
-            </div>
-            <div class="service">
-                <span>Ironing - ₹30</span>
-                <button class="service-btn" data-name="Ironing" data-price="30">
-                 + Add Item
-                </button>
-            </div>
-            <div class="service">
-                <span>Stain Removal - ₹500</span>
-                <button class="service-btn" data-name="Stain Removal" data-price="500">
-                 + Add Item
-                </button>
-            </div>
-            <div class="service">
-                <span>Leather Cleaning - ₹999</span>
-                <button class="service-btn" data-name="Leather Cleaning" data-price="999">
-                 + Add Item
-                </button>
-            </div>
-            <div class="service">
-                <span>Wedding Dress - ₹2800</span>
-                <button class="service-btn" data-name="Wedding Dress Cleaning" data-price="2800">
-                 + Add Item
-                </button>
+    <!-- Services Section with Cart Functionality -->
+    <section class="p-20 grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-10 bg-white" id="services">
+        <div class="bg-white rounded-3xl p-8 shadow-2xl">
+            <h3 class="text-2xl font-bold mb-8 text-gray-800">Our Services</h3>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center px-6 py-6 border border-gray-200 rounded-2xl hover:bg-blue-50 transition-all duration-300">
+                    <span class="text-lg font-semibold text-gray-800">Dry Cleaning - ₹200</span>
+                    <button class="service-btn bg-gray-100 border-2 border-blue-400 px-6 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-blue-100 hover:border-blue-500" data-name="Dry Cleaning" data-price="200">
+                        + Add Item
+                    </button>
+                </div>
+                <div class="flex justify-between items-center px-6 py-6 border border-gray-200 rounded-2xl hover:bg-blue-50 transition-all duration-300">
+                    <span class="text-lg font-semibold text-gray-800">Wash & Fold - ₹100</span>
+                    <button class="service-btn bg-gray-100 border-2 border-blue-400 px-6 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-blue-100 hover:border-blue-500" data-name="Wash & Fold" data-price="100">
+                        + Add Item
+                    </button>
+                </div>
+                <div class="flex justify-between items-center px-6 py-6 border border-gray-200 rounded-2xl hover:bg-blue-50 transition-all duration-300">
+                    <span class="text-lg font-semibold text-gray-800">Ironing - ₹30</span>
+                    <button class="service-btn bg-gray-100 border-2 border-blue-400 px-6 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-blue-100 hover:border-blue-500" data-name="Ironing" data-price="30">
+                        + Add Item
+                    </button>
+                </div>
+                <div class="flex justify-between items-center px-6 py-6 border border-gray-200 rounded-2xl hover:bg-blue-50 transition-all duration-300">
+                    <span class="text-lg font-semibold text-gray-800">Stain Removal - ₹500</span>
+                    <button class="service-btn bg-gray-100 border-2 border-blue-400 px-6 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-blue-100 hover:border-blue-500" data-name="Stain Removal" data-price="500">
+                        + Add Item
+                    </button>
+                </div>
+                <div class="flex justify-between items-center px-6 py-6 border border-gray-200 rounded-2xl hover:bg-blue-50 transition-all duration-300">
+                    <span class="text-lg font-semibold text-gray-800">Leather Cleaning - ₹999</span>
+                    <button class="service-btn bg-gray-100 border-2 border-blue-400 px-6 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-blue-100 hover:border-blue-500" data-name="Leather Cleaning" data-price="999">
+                        + Add Item
+                    </button>
+                </div>
+                <div class="flex justify-between items-center px-6 py-6 border border-gray-200 rounded-2xl hover:bg-blue-50 transition-all duration-300">
+                    <span class="text-lg font-semibold text-gray-800">Wedding Dress - ₹2800</span>
+                    <button class="service-btn bg-gray-100 border-2 border-blue-400 px-6 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all duration-200 hover:bg-blue-100 hover:border-blue-500" data-name="Wedding Dress Cleaning" data-price="2800">
+                        + Add Item
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="cart-wrapper">
-            <div class="cart">
-                <h3>Added Items</h3>
-                <ul id="cartItems"></ul>
-                <h4>Total Amount: ₹<span id="total">0</span></h4>
+        <div class="flex flex-col gap-6">
+            <!-- Cart Items -->
+            <div class="bg-white rounded-3xl p-8 shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800">Your Cart</h3>
+                <ul id="cartItems" class="list-none mb-8 space-y-3 max-h-64 overflow-y-auto"></ul>
+                <div class="text-right">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-2">Total Amount: ₹<span id="total" class="text-blue-600">0</span></h4>
+                </div>
             </div>
 
-            <form class="checkout" id="bookingForm">
-                <h3>Book Now</h3>
-                <input type="text" name="name" placeholder="Full Name*" required aria-label="Full Name">
-                <input type="email" name="email" placeholder="Email*" required aria-label="Email">
-                <input type="tel" name="phone" placeholder="Phone Number*" required aria-label="Phone">
-                <button type="submit" class="primary-btn">Book Now</button>
+            <!-- Booking Form -->
+            <form class="bg-white rounded-3xl p-8 shadow-2xl" id="bookingForm">
+                <h3 class="text-2xl font-bold mb-8 text-gray-800">Book Now</h3>
+                
+                <input type="text" name="name" placeholder="Full Name*"  aria-label="Full Name" class="w-full mb-4 p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="email" name="email" placeholder="Email*"  aria-label="Email" class="w-full mb-4 p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <input type="tel" name="phone" placeholder="Phone Number*"  aria-label="Phone" class="w-full mb-6 p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Book Now
+                </button>
+                <div id="statusMsg" class="status-message hidden"></div>
             </form>
         </div>
     </section>
 
-    <section class="features" id="about">
-    <div class="feature-card">
-        
-        <h4>Premium Services</h4>
-        <p>Top-quality detergents and modern machines for perfect care.</p>
-    </div>
-    <div class="feature-card">
-        <h4>24/7 Support</h4>
-        <p>Always available for bookings, queries, and updates.</p>
-    </div>
-    <div class="feature-card">
-        <h4>Doorstep Delivery</h4>
-        <p>Free pickup and delivery at your convenience.</p>
-    </div>
-    <div class="feature-card">
-        <h4>Affordable Prices</h4>
-        <p>Transparent pricing with no hidden charges.</p>
-    </div>
-</section>
-
-
-    <section class="newsletter">
-        <h2>Subscribe to our newsletter</h2>
-        <input type="text" placeholder="Full name">
-        <input type="email" placeholder="Email">
-        <button>Subscribe</button>
+    <!-- Features Section -->
+    <section class="text-gray-600 body-font bg-gray-50" id="about">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4 text-center items-stretch">
+                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                    <div class="border-2 border-gray-200 px-6 py-8 rounded-2xl flex flex-col h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <h2 class="title-font font-bold text-3xl text-gray-900 mb-6">Premium Services</h2>
+                        <p class="leading-relaxed text-gray-600 flex-1">Elevate your wardrobe with our meticulous dry cleaning, ensuring garments look and feel as good as new.</p>
+                    </div>
+                </div>
+                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                    <div class="border-2 border-gray-200 px-6 py-8 rounded-2xl flex flex-col h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <h2 class="title-font font-bold text-3xl text-gray-900 mb-6">Quick Support</h2>
+                        <p class="leading-relaxed text-gray-600 flex-1">We're committed to providing prompt solutions to ensure your experience is smooth and worry-free.</p>
+                    </div>
+                </div>
+                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                    <div class="border-2 border-gray-200 px-6 py-8 rounded-2xl flex flex-col h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <h2 class="title-font font-bold text-3xl text-gray-900 mb-6">Hassle Free Delivery</h2>
+                        <p class="leading-relaxed text-gray-600 flex-1">Enjoy seamless services with our convenient pickup and delivery options, tailored to your schedule.</p>
+                    </div>
+                </div>
+                <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                    <div class="border-2 border-gray-200 px-6 py-8 rounded-2xl flex flex-col h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <h2 class="title-font font-bold text-3xl text-gray-900 mb-6">Affordable Prices</h2>
+                        <p class="leading-relaxed text-gray-600 flex-1">Experience exceptional care without breaking the bank—our affordable prices make laundry day stress-free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer id="contact">
+    <!-- Newsletter Section -->
+    <section class="bg-gradient-to-r from-blue-500 to-blue-600" id="contact">
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center">
+                <h2 class="text-3xl font-bold text-white sm:text-4xl mb-6">
+                    Sign up for our newsletter
+                </h2>
+                <p class="mb-8 text-xl text-blue-100">
+                    Stay updated with exclusive offers and laundry care tips!
+                </p>
+                <form action="#" class="mx-auto mt-6 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
+                    <label for="Email" class="flex-1">
+                        <span class="sr-only">Email</span>
+                        <input type="email" id="Email" placeholder="Enter your email" class="h-12 w-full rounded-xl border-0 shadow-lg px-4 text-gray-900 focus:ring-2 focus:ring-white focus:border-white transition duration-200">
+                    </label>
+                    <button type="submit" class="h-12 px-8 rounded-xl border-2 border-white bg-white text-blue-600 font-semibold text-sm uppercase tracking-wide hover:bg-blue-50 transition duration-200 shadow-lg">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white p-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
         <div>
-            <h4>FreshFold Laundry</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, deleniti.</p>
+            <h4 class="font-bold mb-4 text-2xl">Laundry</h4>
+            <p class="text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex enim, libero asperiores iste sint cupiditate.</p>
         </div>
         <div>
-            <h4>Quick Links</h4>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#">Privacy Policy</a>
+            <h4 class="font-bold mb-4 text-lg">Quick Links</h4>
+            <a href="#services" class="block text-gray-400 mb-2 hover:text-white transition duration-200">Services</a>
+            <a href="#about" class="block text-gray-400 mb-2 hover:text-white transition duration-200">About Us</a>
+            <a href="#contact" class="block text-gray-400 hover:text-white transition duration-200">Contact Us</a>
         </div>
         <div>
-            <h4>Contact</h4>
-            <p>mail@site.com</p>
-            <p>+91 91234 56780</p>
+            <h4 class="font-bold mb-4 text-lg">Contact</h4>
+            <p class="text-gray-400 mb-2">mail@123.com</p>
+            <p class="text-gray-400">+91 34525 44535</p>
         </div>
-        <div class="footer-social">
-            <h4>Follow Us</h4>
-            <div class="social-icons">
-                <a href="#" aria-label="Instagram">
-                    <img src="https://img.icons8.com/ios-filled/24/64748b/instagram-new.png" alt="Instagram">
+        <div>
+            <h4 class="font-bold mb-4 text-lg">Follow Us</h4>
+            <div class="flex gap-4">
+                <a href="#" aria-label="Instagram" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300 hover:shadow-lg">
+                    <img src="https://img.icons8.com/?size=100&id=32309&format=png&color=000000" alt="Instagram" class="w-6 h-6">
                 </a>
-                <a href="#" aria-label="Facebook">
-                    <img src="https://img.icons8.com/ios-filled/24/64748b/facebook-new.png" alt="Facebook">
+                <a href="#" aria-label="Facebook" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300 hover:shadow-lg">
+                    <img src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000" alt="Facebook" class="w-6 h-6">
                 </a>
-                <a href="#" aria-label="Twitter">
-                    <img src="https://img.icons8.com/ios-filled/24/64748b/twitter.png" alt="Twitter">
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                    <img src="https://img.icons8.com/ios-filled/24/64748b/linkedin.png" alt="LinkedIn">
+                <a href="#" aria-label="Twitter" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition duration-300 hover:shadow-lg">
+                    <img src="https://img.icons8.com/?size=100&id=58329&format=png&color=000000" alt="Instagram" class="w-6 h-6">
                 </a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript Functionality -->
+     <script src="script.js"></script>
+
 </body>
 </html>
